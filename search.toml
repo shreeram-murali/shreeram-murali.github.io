@@ -1,0 +1,28 @@
+[input]
+base_directory = "output"
+html_selector = "main"
+
+[[input.files]]
+path = "pages/about.html"
+url = "/pages/about.html"
+title = "About"
+
+[[input.files]]
+path = "pages/contact.html"
+url = "/pages/contact.html"
+title = "Contact"
+
+[[input.files]]
+path = "pages/cv.html"
+url = "/pages/cv.html"
+title = "CV"
+
+[[input.files]]
+path = "pages/projects.html"
+url = "/pages/projects.html"
+title = "Projects"
+
+[[input.files]]
+path = "pages/research.html"
+url = "/pages/research.html"
+title = "Research"
