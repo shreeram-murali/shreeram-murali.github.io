@@ -1,139 +1,229 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html><html><head><title>Shreeram Murali</title><meta name="description" content="personal website"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>#imml a.portal:not(.inline) {
+  display: block;
+}
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Pelican" />
-    <title> Home </title>
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
-    <link rel="stylesheet" type="text/css" href="https://shreeram-murali.github.io/theme/css/main.css" />
-    <link rel="stylesheet" href="https://shreeram-murali.github.io/theme/css/stork.css">
-    <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
-        href="https://shreeram-murali.github.io/theme/css/stork-dark.css">
-    <link
-        href="https://shreeram-murali.github.io/feeds/all.atom.xml"
-        type="application/atom+xml" rel="alternate" title="Home Atom Feed" />
-    <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    </script>
-</head>
+#imml .pages > .page:target ~ .page:last-child,
+#imml .pages > .page {
+  display: none;
+}
 
-<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
-    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
-    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
-        <div class="flex pt-4">
-            <h1 class="font-semibold text-2xl"><a href="https://shreeram-murali.github.io/">Home</a></h1>
-            <button id="theme-toggle" type="button"
-                class="text-zinc-700 dark:text-zinc-400 rounded-full focus:outline-none text-sm ml-2 p-1">
-                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                </svg>
-                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                        fill-rule="evenodd" clip-rule="evenodd"></path>
-                </svg>
-            </button>
-        </div>
-        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/pages/about.html">About</a></li>
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/pages/contact.html">Contact</a></li>
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/pages/cv.html">CV</a></li>
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/pages/projects.html">Projects</a></li>
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/pages/research.html">Research</a></li>
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/archives.html">Archive</a></li>
-            <!-- <li class="mr-4 pt-6"><a                     href="https://shreeram-murali.github.io/categories.html">Categories</a></li>
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/tags.html">Tags</a></li> -->
-            <li class="mr-4 pt-6"><a  href="https://shreeram-murali.github.io/search.html">Search</a></li>
-        </ul>
-    </nav>
-    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+/* :last-child works, but for some reason .page:last-child will not */
+#imml .pages > :last-child,
+#imml .pages > .page:target {
+  display: block;
+}
 
-<div class="my-12 md:my-24 text-zinc-800 dark:text-zinc-300">
-  <h1 class="mb-6 text-3xl font-bold">Shreeram Murali</h1>
-    <p class="mb-8 text-zinc-500 dark:text-zinc-400"> 
-Hi, my name is Shreeram Murali, and I'm currently a research assistant at the Data Augmented Control of Autonomous Systems (DACAS) Lab, 
-Indian Institute of Science, Bangalore.
+#imml .pages > :last-child .breadcrumbs {
+  visibility: hidden;
+}
+</style><style>:root {
+  --imml-text-light: #333333;
+  --imml-text-dark: #eeeeee;
+  --imml-background-light: #ffffff;
+  --imml-background-dark: #121212;
+  --imml-accent-light: dodgerblue;
+  --imml-accent-dark: dodgerblue;
+}
 
-I am interested in researching learning-based control strategies for mobile robot navigation. Outside of academics, I am also a photography and film enthusiast. 
-</p>
-  <ul class="flex px-2 space-x-4 text-lg">
-    <li><a href="https://github.com/shreeram-murali"><i class="fab fa-github fa-lg" aria-hidden="true" target="_blank"
-          rel="noopener noreferrer" title="github"></i></a></li>
-    <li><a href="https://twitter.com/"><i class="fab fa-twitter fa-lg" aria-hidden="true" target="_blank"
-          rel="noopener noreferrer" title="twitter"></i></a></li>
-    <li><a href="https://www.linkedin.com/in/shreeram-murali/"><i class="fab fa-linkedin fa-lg" aria-hidden="true" target="_blank"
-          rel="noopener noreferrer" title="linkedin"></i></a></li>
-    <li><a href="https://shreeram-murali.github.io/
-feeds/all.atom.xml"
-        type="application/atom+xml" title="feeds/all.atom.xml" rel="alternate"><i class="fa fa-rss fa-lg"
-          aria-hidden="true"></i></a>
-    </li>
-  </ul>
-</div>
+:root {
+  --imml-background: var(--imml-background-light);
+  --imml-text: var(--imml-text-light);
+  --imml-text-inverse: var(--imml-text-dark);
+  --imml-accent: var(--imml-accent-light);
+}
 
-<div class="py-1">
-  <ul>
-  </ul>
-</div>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --imml-background: var(--imml-background-dark);
+    --imml-text: var(--imml-text-dark);
+    --imml-text-inverse: var(--imml-text-light);
+    --imml-accent: var(--imml-accent-dark);
+  }
+}
 
-    </div>
-    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-500 dark:text-zinc-400">
-        <div class="px-4">
-            <span>©2022, Shreeram Murali</span>
-            <!-- <span>©2022, Shreeram Murali&nbsp;&#8226;&nbsp;</span>Powered by
-            <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
-            <a class="underline" href="https://github.com/aleylara/Papyrus">&nbsp;Papyrus</a> -->
-        </div>
-    </footer>
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100%;
+  color: var(--imml-text);
+  background: var(--imml-background);
+}
+
+.pages {
+  margin: 0 auto;
+  max-width: 600px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.pages .page {
+  padding-top: 2em;
+  padding-bottom: 10em;
+}
+
+.page .breadcrumbs {
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: small;
+}
+
+p {
+  line-height: 22px;
+}
+
+a {
+  width: fit-content;
+  color: var(--imml-accent);
+  border-bottom: 1px dotted var(--imml-accent);
+  text-decoration: none;
+}
+
+hr {
+  border-style: solid;
+  border-bottom: 1px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+blockquote {
+  border-left: 0.5em solid var(--imml-text-inverse);
+  padding: 0 1em;
+}
+
+blockquote p {
+  font-style: italic;
+}
+
+code {
+  background: var(--imml-text-inverse);
+  border-radius: 0.25em;
+  padding: 0em 0.25em;
+  font-family: monospace;
+  display: inline-block;
+}
+pre code {
+  padding: 0.5em 0.5em;
+}
+pre {
+  overflow-x: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  margin-top: 0.25em;
+  border-collapse: collapse;
+  width: 100%;
+}
+thead {
+  text-align: left;
+  font-weight: bold;
+}
+thead tr {
+  border-bottom: 1px solid;
+}
+tr {
+  border-bottom: 1px dashed;
+}
+td,
+th {
+  padding: 4px;
+}
+</style><style class="imml">
+img.site-logo {
+    height: 16px;
+    image-rendering: pixelated;
+}
+@media (prefers-color-scheme: dark) {
+    img.site-logo {
+        filter: invert();
+    }
+}
+[data-theme="light"] img.site-logo {
+    filter: none;
+}
+[data-theme="dark"] img.site-logo {
+    filter: invert();
+}
+a.external:after {
+    content: " ↗";
+}
+</style></head><body><div id="imml"><div class="pages"><div class="page" id="about"><div class="breadcrumbs"><a href="#">home</a> / <span>about</span></div><h2>about me</h2>
+<p>I am currently a master's student of <em>automation and electrical engineering</em> programme at Aalto University, where I am majoring in <em>control, robotics, and autonomous systems</em>, and minoring in <em>computer science</em>.</p>
+<p>I was previously a junior research fellow with the Data Augmented Control of Autonomous Systems (DACAS) Lab, <a class="external" target="_blank" href="https://en.wikipedia.org/wiki/Indian_Institute_of_Science">Indian Institute of Science, Bangalore</a>, from 2021-2023. I graduated with a Bachelor of Engineering (B.Eng.) in mechanical engineering from <a class="external" target="_blank" href="https://en.wikipedia.org/wiki/Ramaiah_Institute_of_Technology">Ramaiah Institute of Technology</a> in 2021.</p>
+<hr>
+<p>this website was built with <a class="external" target="_blank" href="https://github.com/leoncvlt/imml">imml</a> by <a class="external" target="_blank" href="https://github.com/leoncvlt">leoncvlt</a></p>
+</div><div class="page" id="research"><div class="breadcrumbs"><a href="#">home</a> / <span>research</span></div><h2>research</h2>
+<p>In Fall 2018, during my undergraduate studies, I attended a seminar which dissected the working of commonly used flight controllers on aerial vehicles. It simplified their operation from this obscure notion of automation in our everyday skies to an understandable electronic system that controls a vehicle to follow a planned path.</p>
+<p>In the following weeks, I joined a <a class="external" target="_blank" href="https://www.edhitha.com/">competitive student team</a> that worked on autonomous aerial vehicles. I got to work on GPS-aided autonomous navigation for applications such as obstacle avoidance, imagery, and air delivery. In the following months, I became highly familiar with off-the-shelf embedded controllers and software that could be used to achieve autonomy for various mobile robots, including aerial vehicles, ground vehicles, and underwater vehicles.</p>
+<p>While I became comfortable with building and operating such mobile robots, I wanted to learn how to control them. I joined the Data Augmented Control of Autonomous Systems (DACAS) Lab, led by <a class="external" target="_blank" href="https://mecheng.iisc.ac.in/people/jishnu-keshavan/">Dr. Jishnu Keshavan</a>, at the Indian Institute of Science, Bangalore. My work here involved simulation and experimentation of various adaptive control strategies for mobile robot navigation and applications such as formation control and autonomous landing.</p>
+<h2>publications</h2>
+<h3>conferences</h3>
+<ol>
+<li>Singhal, S., Keshavan, J. and <strong>Murali, S</strong>. (2023) ‘Constant optical flow divergence based robust adaptive control strategy for autonomous vertical landing of quadrotors’, <em>AIAA SCITECH 2023 Forum [Preprint]</em> <a class="external" target="_blank" href="https://arc.aiaa.org/doi/abs/10.2514/6.2023-1150">doi:10.2514/6.2023-1150</a></li>
+</ol>
+</div><div class="page" id="projects"><div class="breadcrumbs"><a href="#">home</a> / <span>projects</span></div><h1>projects</h1>
+<p>The projects on this page are broadly classified under 2 categories:</p>
+<ol>
+<li><strong>Robotics</strong>: Projects and codes that are, in some way, broadly related to robotics and robotics reasearch that I pursue.</li>
+<li><strong>Software</strong>: Other software that are usually applications, such as command-line applications or web applications, that I've built. These are software that are not related to robotics/research and are things I like to build as a tinkerer.</li>
+</ol>
+<h2>robotics</h2>
+<ol>
+<li><a class="external" target="_blank" href="https://github.com/shreeram-murali/QTMWrapper"><strong>QTMWrapper</strong></a>: A toolkit to enable autonomous systems integration with Qualisys motion capture measurements.</li>
+</ol>
+<ul>
+<li><strong>Tools</strong>: Python (multithreading, asyncio)</li>
+</ul>
+<ol start="2">
+<li><a class="external" target="_blank" href="https://github.com/shreeram-murali/crazypaths"><strong>crazypaths</strong></a>: A command-line interface (CLI) for path planning quadrotor trajectories using motion capture positioning in the high-level control loop.</li>
+</ol>
+<ul>
+<li><strong>Tools</strong>: Python, Git</li>
+</ul>
+<ol start="3">
+<li><a class="external" target="_blank" href="https://github.com/shreeram-murali/2DOF-antenna-vectoring"><strong>2DOF Antenna Vectoring</strong></a>: Programs that calculate azimuth and elevation angles for positioning a tracker towards a UAV based on GPS data.</li>
+</ol>
+<ul>
+<li><strong>Tools</strong>: Python, NodeMCU (ESP32), socket</li>
+</ul>
+<ol start="4">
+<li><a class="external" target="_blank" href="https://github.com/shreeram-murali/ros-navigation-templates"><strong>ROS Navigation Templates</strong></a>: Templates for developing controller and navigation nodes using the ROS Navigation Stack.</li>
+</ol>
+<ul>
+<li><strong>Tools</strong>: Python, ROS Melodic</li>
+</ul>
+<ol start="5">
+<li><a class="external" target="_blank" href="https://www.edhitha.com"><strong>Edhitha UAS</strong></a>: A competitive student team that I was a part of (and eventually led) during my undergraduate studies. The team develops UAVs for autonomous navigation, imagery, obstacle avoidance, and other interdisciplinary objectives.</li>
+</ol>
+<h2>software</h2>
+<ol>
+<li><a class="external" target="_blank" href="https://github.com/shreeram-murali/password-manager-cli"><strong>Password Manager CLI</strong></a>: A command-line based local password manager that uses Fernet encryption to locally store your passwords.</li>
+</ol>
+<ul>
+<li><strong>Tools</strong>: Python, Docker (WIP)</li>
+</ul>
+</div><div class="page" id="contact"><div class="breadcrumbs"><a href="#">home</a> / <span>contact</span></div><h1>contact</h1>
+<ul>
+<li><strong>Email</strong>: <code>x@outlook.com</code> where <code>x = shreeram.murali</code></li>
+<li><strong>GitHub</strong>: <a class="external" target="_blank" href="https://github.com/shreeram-murali">shreeram-murali (github.com)</a></li>
+<li><strong>LinkedIn</strong>: <a class="external" target="_blank" href="https://www.linkedin.com/in/shreeram-murali/">/in/shreeram-murali (linkedin.com)</a></li>
+<li><strong>Twitter</strong>: <a class="external" target="_blank" href="https://twitter.com/eigenshree">@eigenshree</a></li>
+</ul>
+</div><div class="page" id="home"><div class="breadcrumbs"><span>home</span></div><h1>Shreeram Murali</h1>
+<hr>
+<p>Hi, my name is Shreeram, and I'm currently a master's student of electrical engineering and computer science (EECS) at Aalto University, Finland. I'm interested in learning-based control and vision-based control, particularly in problems pertaining to autonomous navigation. Outside of this, I'm a photography and film enthusiast.</p>
+<p><a class="external" target="_blank" href="CV.pdf">link to CV</a> | <a class="external" target="_blank" href="">link to one-page resume (to be updated)</a></p>
+<a class="portal" href="#about">about</a><a class="portal" href="#research">research</a><a class="portal" href="#projects">projects</a><a class="portal" href="#contact">contact</a><br>
 
 
-    <script>
-        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-        }
-        let themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function () {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-            } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
-            }
-        });
-    </script>
-    <script src="https://files.stork-search.net/releases/v1.4.0/stork.js"></script>
-    <script>
-        stork.register("sitesearch", "https://shreeram-murali.github.io/search-index.st")
-    </script>
-</body>
 
-</html>
+</div></div></div></body></html>
