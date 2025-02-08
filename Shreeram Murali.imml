@@ -8,22 +8,24 @@ $description: personal website
 
     Hi, my name is Shreeram, and I'm currently a master's student of electrical engineering and computer science (EECS) at Aalto University, Finland. I'm also a research assistant with the [Cyber-physical Systems Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/cyber-physical-systems). 
 
-    Broadly, my research interests are at the intersection of machine learning and control theory. Therefore, I enjoy nonlinear control, optimisation, and reinforcement learning, especially when they are applied to robotics or health technologies. 
+    Broadly, my research interests are at the intersection of machine learning and control. More specifically, I'm interested in exploring ideas that make learning-based methods safer, computationally lightweight, and more robust. 
 
     // ![image](https://avatars.githubusercontent.com/u/45518087?v=4)
     
     As an engineering student, a lot of my work involves experimentation, so you'll find links to software projects on my GitHub. Outside of this, I'm into photography, film, and music. 
 
-    [link to CV](cv.pdf) | [link to one-page resume](resume.pdf)
+    [link to CV](cv.pdf)
 
-    [about(about)]
-        ## about me
+    ---
+
+    [bio(bio)]
+        ## bio
         
         I am currently a master's student of **automation and electrical engineering** programme at [Aalto University](https://en.wikipedia.org/wiki/Aalto_University), where I am majoring in **control, robotics, and autonomous systems**, and minoring in **computer science**. I started my studies in the autumn of 2023, and I expect to finish my studies in 2025. 
 
-        I currently work with [Prof. Dominik Baumann](https://baumanndominik.github.io/) of the [Cyber-physical Systems Group]() on ergodicity and robustness in reinforcement learning. The objective of my research here is to learn a reward transformation such that RL agents do not suffer from low-probability high-impact agents during the training phase. 
+        I currently work with [Prof. Dominik Baumann](https://baumanndominik.github.io/) of the [Cyber-physical Systems Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/cyber-physical-systems) on learning computationally lightweight classifiers for safe RL. Previously, I had worked on learning reward transformations that woudl mitigate the effects of low-probability high-impact events in RL. 
 
-        I was previously a graduate *research assistant* with the [Sensor Informatics Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/sensor-informatics-and-medical-technology), working on implementing optimal control methods on a rotary inverted pendulum. The group is led by [Prof. Simo Sarkka](https://users.aalto.fi/~ssarkka/), whose course "Basics of Sensor Fusion" I am currently a *teaching assistant* for.  
+        I was previously a graduate *research assistant* with the [Sensor Informatics Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/sensor-informatics-and-medical-technology), working on implementing optimal control methods on a rotary inverted pendulum. The group is led by [Prof. Simo Sarkka](https://users.aalto.fi/~ssarkka/).
 
         Before that, I was a *junior research fellow* with the Data, Control, and Autonomous Systems (DACAS) Lab, [Indian Institute of Science, Bangalore](https://en.wikipedia.org/wiki/Indian_Institute_of_Science), from 2021-2023, with [Prof. Jishnu Keshavan](https://scholar.google.com/citations?user=jxgBqyQAAAAJ&hl=en). I graduated with a Bachelor of Engineering (B.Eng.) in mechanical engineering from [Ramaiah Institute of Technology](https://en.wikipedia.org/wiki/Ramaiah_Institute_of_Technology) in 2021.
 
