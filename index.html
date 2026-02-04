@@ -138,8 +138,25 @@ th {
   padding: 4px;
 }
 </style><style class="imml">
-body {
-    font-family: 'Inter'</style></head><body><div id="imml"><div class="pages"><div class="page" id="bio"><div class="breadcrumbs"><a href="#">home</a> / <span>bio</span></div><h2>bio</h2>
+img.site-logo {
+    height: 16px;
+    image-rendering: pixelated;
+}
+@media (prefers-color-scheme: dark) {
+    img.site-logo {
+        filter: invert();
+    }
+}
+[data-theme="light"] img.site-logo {
+    filter: none;
+}
+[data-theme="dark"] img.site-logo {
+    filter: invert();
+}
+a.external:after {
+    content: " ↗";
+}
+</style></head><body><div id="imml"><div class="pages"><div class="page" id="bio"><div class="breadcrumbs"><a href="#">home</a> / <span>bio</span></div><h2>bio</h2>
 <p>I completed my master's degree in <strong>electrical engineering</strong> at <a class="external" target="_blank" href="https://en.wikipedia.org/wiki/Aalto_University">Aalto University</a>, where I am majored in <strong>control, robotics, and autonomous systems</strong>, and minored in <strong>computer science</strong>. My master's thesis on learning computationally lightweight classifiers was advised and supervised by Prof. <a class="external" target="_blank" href="https://baumanndominik.github.io">Dominik Baumann</a>.</p>
 <p>I was previously a graduate <em>research assistant</em> with the <a class="external" target="_blank" href="https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/sensor-informatics-and-medical-technology">Sensor Informatics Group</a>, working on implementing optimal control methods on a rotary inverted pendulum. The group is led by <a class="external" target="_blank" href="https://users.aalto.fi/~ssarkka/">Prof. Simo Sarkka</a>.</p>
 <p>Before that, I was a <em>junior research fellow</em> with the Data, Control, and Autonomous Systems (DACAS) Lab, <a class="external" target="_blank" href="https://en.wikipedia.org/wiki/Indian_Institute_of_Science">Indian Institute of Science, Bangalore</a>, from 2021–2023, with <a class="external" target="_blank" href="https://scholar.google.com/citations?user=jxgBqyQAAAAJ&amp;hl=en">Prof. Jishnu Keshavan</a>. I graduated with a Bachelor of Engineering (B.Eng.) in mechanical engineering from <a class="external" target="_blank" href="https://en.wikipedia.org/wiki/Ramaiah_Institute_of_Technology">Ramaiah Institute of Technology</a> in 2021.</p>
