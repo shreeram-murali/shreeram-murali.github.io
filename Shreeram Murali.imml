@@ -11,28 +11,6 @@ $accent-color: #E9762B, #E68369
     # Shreeram Murali
 
     ---
-
-    I am a Ph.D. student at the [Cyber-physical Systems Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/cyber-physical-systems) at Aalto University, Finland, supervised by Prof. [Dominik Baumann](https://baumanndominik.github.io) and Prof. [Shankar Deka](https://research.aalto.fi/en/persons/shankar-deka). I'm also affiliated with the [Finnish Center of Artificial Intelligence](https://fcai.fi). 
-
-    Broadly, my research interests are at the intersection of machine learning, computational statistics, and autonomous control. More specifically, I'm interested in exploring ideas that make learning-based methods safer, computationally lightweight, and more robust for applications in robotics and healthcare. Outside of this, I'm into photography, filmmaking, film-watching, and noodling on my acoustic guitar.
-
-    [link to CV](cv.pdf)
-
-    ---
-    ## news
-
-    - **January 2026**: Our paper "Computationally lightweight classfifiers with frequentist bounds on prediction errors" was accepted to AISTATS 2026. See you in Tangier, Morocco!
-    
-    - **November 2025**: I presented our [poster on Nadaraya-Watson classifiers](nwc_poster.pdf) at the [Nordic AI Meet](https://nordicaimeet.com), [FCAI AI Day](https://fcai.fi/ai-day-2025), and the IEEE Finland Workshop on Emerging Trends in Automatic Control. 
-
-    --- 
-    
-    <p align='center'>
-    <img src="https://avatars.githubusercontent.com/u/45518087?v=4">
-    </p>
-
-    ---
-
     [bio(bio)]
         ## bio
         
@@ -77,8 +55,28 @@ $accent-color: #E9762B, #E68369
         - **LinkedIn**: [/in/shreeram-murali (linkedin.com)](https://www.linkedin.com/in/shreeram-murali/)
 
         **Office**: Room 2554, Maarintie 8, Espoo 02150, Finland.
+    ---
 
-    // <img class="site-logo" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAICAYAAADjoT9jAAAAVElEQVQ4T7WSQQoAIAgE11/7BH9dKCUSCR7Uk9SwgxlhuAjAOg7tu8ozX8G9yESRrzD0FYgImNkCYg/A+QqjfDZB23lb0LNLe2qdclSgks6f8136Bh9eL5/EVkSDAAAAAElFTkSuQmCC'/>
+    I am a Ph.D. student at the [Cyber-physical Systems Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/cyber-physical-systems) at Aalto University, Finland, supervised by Prof. [Dominik Baumann](https://baumanndominik.github.io) and Prof. [Shankar Deka](https://research.aalto.fi/en/persons/shankar-deka). I'm also affiliated with the [Finnish Center of Artificial Intelligence](https://fcai.fi). 
+
+    Broadly, my research interests are at the intersection of machine learning, computational statistics, and autonomous control. More specifically, I'm interested in exploring ideas that make learning-based methods safer, computationally lightweight, and more robust for applications in robotics and healthcare. Outside of this, I'm into photography, filmmaking, film-watching, and noodling on my acoustic guitar.
+
+    [link to CV](cv.pdf)
+
+    ---
+    ## news
+
+    - **January 2026**: Our paper "Computationally lightweight classfifiers with frequentist bounds on prediction errors" was accepted to AISTATS 2026. See you in Tangier, Morocco!
+    
+    - **November 2025**: I presented our [poster on Nadaraya-Watson classifiers](nwc_poster.pdf) at the [Nordic AI Meet](https://nordicaimeet.com), [FCAI AI Day](https://fcai.fi/ai-day-2025), and the IEEE Finland Workshop on Emerging Trends in Automatic Control. 
+
+    --- 
+    
+    <p align='center'>
+    <img src="https://avatars.githubusercontent.com/u/45518087?v=4">
+    </p>
+
+    ---
     
     <br>
 
