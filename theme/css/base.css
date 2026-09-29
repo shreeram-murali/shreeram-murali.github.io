@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Layout and typography for all pages. Values come from tokens.css.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading);
+  text-rendering: optimizeLegibility;
+}
+
+main { flex: 1; }
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* --- Header band ------------------------------------------------------- */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding-block: var(--space-4);
+}
+.site-name {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  font-size: 1.3rem;
+  line-height: var(--leading-tight);
+  color: var(--heading);
+  text-decoration: none;
+}
+.site-name:hover { color: var(--heading); }
+
+.site-header__end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  font-family: var(--font-heading);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--link); border-color: currentColor; }
+.theme-toggle[aria-pressed="true"] svg { transform: rotate(180deg); }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+.nav li + li { margin-top: 0; }
+.nav li + li::before {
+  content: "/";
+  content: "/" / "";
+  margin-inline: 0.55em;
+  color: var(--muted);
+}
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+.nav a:hover { color: var(--link); text-decoration: underline; }
+.nav a[aria-current] {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+main.wrap { padding-block: var(--space-5) var(--space-6); }
+
+/* --- Typography --------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-tight);
+  color: var(--heading);
+  margin: var(--space-5) 0 var(--space-3);
+}
+h1 { font-size: var(--text-h1); margin-top: 0; letter-spacing: -0.01em; }
+h2 {
+  font-size: var(--text-h2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: var(--text-h3); margin-top: var(--space-4); }
+h4 { font-size: 1rem; }
+
+p, ul, ol, dl, blockquote, pre, table, figure { margin: 0 0 var(--space-3); }
+ul, ol { padding-left: 1.4em; }
+li + li { margin-top: var(--space-2); }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+
+strong, b { font-weight: 700; }
+small, .meta { font-size: var(--text-small); color: var(--muted); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--space-5) 0;
+}
+
+/* Pull-quote style: accent bar, large bold heading type. */
+blockquote {
+  margin: var(--space-5) 0 var(--space-5) calc(-1 * var(--space-4));
+  padding: var(--space-1) 0 var(--space-1) calc(var(--space-4) - 4px);
+  border-left: 4px solid var(--accent);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--weight-heading);
+  line-height: 1.35;
+  color: var(--heading);
+}
+blockquote > :last-child { margin-bottom: 0; }
+@media (max-width: 40rem) {
+  blockquote { margin-left: 0; padding-left: var(--space-3); font-size: 1.25rem; }
+}
+
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.9em; }
+code {
+  padding: 0.1em 0.3em;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+pre {
+  padding: var(--space-3);
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  line-height: 1.5;
+}
+pre code { padding: 0; background: none; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+th, td { padding: var(--space-2); border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+th { color: var(--heading); }
+
+/* --- Images ------------------------------------------------------------- */
+
+img, video { max-width: 100%; height: auto; }
+figure img { display: block; }
+figcaption { margin-top: var(--space-2); font-size: var(--text-small); color: var(--muted); }
+
+/* --- Columns ------------------------------------------------------------
+   <div class="columns" markdown="1"> … </div>
+   Each direct child is one column. Variants:
+     .three          three equal columns
+     .narrow-first   narrow first column (photo/sidebar), wide second
+   All stack into one column on small screens.
+   ------------------------------------------------------------------------ */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-5);
+  align-items: start;
+  margin-bottom: var(--space-3);
+}
+.columns.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.columns.narrow-first { grid-template-columns: var(--portrait-width) minmax(0, 1fr); }
+.columns > * { margin-top: 0; }
+.columns > * > :last-child { margin-bottom: 0; }
+.columns > p:has(> img:only-child) { margin: 0; }
+.columns img { display: block; width: 100%; }
+
+@media (max-width: 40rem) {
+  .columns,
+  .columns.three,
+  .columns.narrow-first { grid-template-columns: minmax(0, 1fr); }
+  .columns.narrow-first > :first-child { max-width: var(--portrait-width); }
+}
+
+/* --- Floated images ----------------------------------------------------
+   ![alt](...){: .float-left } or {: .float-right }: text wraps around the
+   image. Headings (h2) and rules start below it. On small screens the image
+   sits on its own line instead.
+   ------------------------------------------------------------------------ */
+
+img.float-left,
+img.float-right { display: block; width: var(--portrait-width); max-width: 45%; }
+img.float-left  { float: left;  margin: 0.35rem var(--space-4) var(--space-2) 0; }
+img.float-right { float: right; margin: 0.35rem 0 var(--space-2) var(--space-4); }
+h2, hr, .columns { clear: both; }
+
+@media (max-width: 40rem) {
+  img.float-left,
+  img.float-right { float: none; max-width: 100%; margin: 0 0 var(--space-4); }
+}
+
+/* Portrait on the home page */
+img.portrait { border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* --- Publications ------------------------------------------------------
+   <div class="pub" markdown="1">  title / authors / venue / links
+   ------------------------------------------------------------------------ */
+
+.pub { margin-bottom: var(--space-4); }
+.pub > p { margin: 0; }
+.pub > p:nth-child(1) { font-weight: 600; color: var(--heading); line-height: 1.4; }
+.pub > p:nth-child(3) { color: var(--muted); }
+.pub > p:nth-child(4) { font-size: var(--text-small); margin-top: var(--space-1); }
+
+/* --- Blog --------------------------------------------------------------- */
+
+.post-list { list-style: none; padding: 0; }
+.post-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-4);
+  margin: 0;
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--rule);
+}
+.post-list time {
+  flex: 0 0 9rem;
+  color: var(--muted);
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+}
+.post-list a { flex: 1 1 16rem; }
+
+.post-header { margin-bottom: var(--space-4); }
+.post-header h1 { margin-bottom: var(--space-2); }
+.post-header .meta { margin: 0; }
+.post-footer { margin-top: var(--space-5); padding-top: var(--space-3); border-top: 1px solid var(--rule); }
+
+/* --- Footer ------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding-block: var(--space-4);
+  text-align: center;
+  font-size: var(--text-small);
+  color: var(--muted);
+}
+.site-footer p { margin: 0; }
+.site-footer a { color: inherit; }
+
+/* --- Accessibility ------------------------------------------------------ */
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: -3rem;
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg);
+  color: var(--link);
+  z-index: 10;
+}
+.skip-link:focus { top: var(--space-3); }
+
+@media (max-width: 40rem) {
+  :root { --text-h1: 1.7rem; --text-base: 1rem; }
+  main.wrap { padding-block: var(--space-4) var(--space-5); }
+}
+
+/* Small-screen header: theme button beside the name, nav on one line. */
+@media (max-width: 40rem) {
+  .site-header__inner { position: relative; }
+  .site-name { padding-right: 2.75rem; }
+  .theme-toggle { position: absolute; top: calc(var(--space-4) - 0.35rem); right: var(--gutter); }
+  .nav { font-size: 0.9rem; }
+  .nav li + li::before { margin-inline: 0.4em; }
+}

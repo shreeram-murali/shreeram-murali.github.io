@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-palette="rose" data-font-heading="auto" data-font-body="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV · Shreeram Murali</title>
+  <meta name="description" content="Curriculum vitae of Shreeram Murali.">
+  <meta name="author" content="Shreeram Murali">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Shreeram Murali">
+  <meta property="og:title" content="CV · Shreeram Murali">
+  <meta property="og:description" content="Curriculum vitae of Shreeram Murali.">
+  <meta property="og:url" content="https://shreeram-murali.github.io/cv/">
+  <meta property="og:image" content="https://shreeram-murali.github.io/images/portrait.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="https://shreeram-murali.github.io/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://shreeram-murali.github.io/theme/css/tokens.css">
+  <link rel="stylesheet" href="https://shreeram-murali.github.io/theme/css/base.css">
+  <script>
+    /* Apply a saved light/dark choice before the page paints. */
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body class="page page--cv">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="site-name" href="https://shreeram-murali.github.io/">Shreeram Murali</a>
+      <div class="site-header__end">
+        <nav aria-label="Main">
+          <ul class="nav">
+            <li><a href="https://shreeram-murali.github.io/">Home</a></li>
+            <li><a href="https://shreeram-murali.github.io/publications/">Publications</a></li>
+            <li><a href="https://shreeram-murali.github.io/cv/" aria-current="page">CV</a></li>
+            <li><a href="https://shreeram-murali.github.io/blog/">Blog</a></li>
+            <li><a href="https://shreeram-murali.github.io/photography/">Photography</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" title="Toggle dark mode" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/>
+          </svg>
+          <span class="visually-hidden">Dark mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+<article>
+  <h1>CV</h1>
+  <p>My full CV is available as a PDF: <strong><a href="https://shreeram-murali.github.io/files/cv.pdf">Download CV (PDF)</a></strong></p>
+<h2 id="education">Education</h2>
+<ul>
+<li><strong>PhD</strong>, Electrical Engineering, Aalto University, Finland — ongoing</li>
+<li><strong>MSc</strong>, Electrical Engineering (Control, Robotics and Autonomous Systems; minor in Computer Science), Aalto University. Thesis on computationally lightweight classifiers, advised by Prof. <a href="https://baumanndominik.github.io">Dominik Baumann</a>.</li>
+<li><strong>BEng</strong>, Mechanical Engineering, <a href="https://en.wikipedia.org/wiki/Ramaiah_Institute_of_Technology">Ramaiah Institute of Technology</a>, Bangalore, 2021</li>
+</ul>
+<h2 id="research-experience">Research experience</h2>
+<ul>
+<li><strong>Research assistant</strong>, <a href="https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/sensor-informatics-and-medical-technology">Sensor Informatics Group</a>, Aalto University (led by Prof. <a href="https://users.aalto.fi/~ssarkka/">Simo Särkkä</a>). Optimal control on a rotary inverted pendulum.</li>
+<li><strong>Junior research fellow</strong>, Data, Control, and Autonomous Systems Lab, <a href="https://en.wikipedia.org/wiki/Indian_Institute_of_Science">Indian Institute of Science</a>, Bangalore, 2021–2023, with Prof. <a href="https://scholar.google.com/citations?user=jxgBqyQAAAAJ&amp;hl=en">Jishnu Keshavan</a>.</li>
+</ul>
+</article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Built with <a href="https://getpelican.com">Pelican</a>.</p>
+      <p>&copy; Shreeram Murali</p>
+    </div>
+  </footer>
+  <script>
+    /* Light/dark button. With no saved choice the site follows the system
+       setting; picking the mode that matches the system clears the choice. */
+    (function () {
+      var root = document.documentElement;
+      var button = document.getElementById("theme-toggle");
+      var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+      function current() { return root.dataset.theme || (systemDark.matches ? "dark" : "light"); }
+      function sync() { button.setAttribute("aria-pressed", current() === "dark"); }
+      button.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        var system = systemDark.matches ? "dark" : "light";
+        try {
+          if (next === system) { delete root.dataset.theme; localStorage.removeItem("theme"); }
+          else { root.dataset.theme = next; localStorage.setItem("theme", next); }
+        } catch (e) { root.dataset.theme = next; }
+        sync();
+      });
+      systemDark.addEventListener("change", sync);
+      button.hidden = false;
+      sync();
+    })();
+  </script>
+</body>
+</html>

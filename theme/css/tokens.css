@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Design tokens: every font, colour, size and spacing value lives here.
+   base.css and photography.css only ever use these variables.
+
+   Palette is chosen by THEME_PALETTE in pelicanconf.py, which sets
+   <html data-palette="...">. Fonts are chosen by THEME_FONT_BODY /
+   THEME_FONT_HEADING, which set data-font-body / data-font-heading.
+   ========================================================================== */
+
+:root {
+  /* Font stacks (system fonts: nothing to download) */
+  --stack-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --stack-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --stack-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Font roles (a palette may change these; data-font-* overrides both) */
+  --font-body: var(--stack-sans);
+  --font-heading: var(--font-body);
+  --font-mono: var(--stack-mono);
+
+  /* Type scale */
+  --text-base: 1.0625rem;   /* 17px */
+  --text-small: 0.875rem;
+  --text-h1: 2rem;
+  --text-h2: 1.375rem;
+  --text-h3: 1.125rem;
+  --leading: 1.65;
+  --leading-tight: 1.25;
+  --weight-heading: 700;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+
+  /* Layout */
+  --measure: 42rem;         /* academic content column (~670px) */
+  --wide: 76rem;            /* visual pages (photography, film) */
+  --gutter: 1.25rem;        /* side padding on small screens */
+  --portrait-width: 11rem;  /* photo column on the home page */
+  --radius: 4px;
+}
+
+/* --- Palettes ------------------------------------------------------------
+   Colour roles:
+   --bg          page background
+   --surface     header band, code blocks, table stripes
+   --text        body text
+   --muted       dates, venues, footer
+   --heading     headings and site name
+   --rule        hairlines (under h2, footer, tables)
+   --accent      decorative colour (quote bar); needn't meet text contrast
+   --link        links (must reach 4.5:1 on --bg)
+   --link-hover
+   --focus       keyboard focus ring
+
+   Palettes with a dark variant write each colour as light-dark(LIGHT, DARK)
+   and set color-scheme: light dark. They follow the visitor's system
+   setting, and the header's theme button can force either mode (it sets
+   <html data-theme="light|dark">, rules at the bottom of this file).
+   Palettes with a dark variant are listed in base.html (dual_palettes) so
+   the button only appears for them.
+   ------------------------------------------------------------------------ */
+
+/* rose: dusty pink paper, near-black serif text, coral accent (light);
+   charcoal with pale-green text and salmon accent (dark). */
+[data-palette="rose"] {
+  color-scheme: light dark;
+  --bg:         light-dark(#e8dfdd, #262626);
+  --surface:    light-dark(#ded3d0, #2e2e2e);
+  --text:       light-dark(#161213, #e2e8ce);
+  --muted:      light-dark(#5b5052, #aeb39f);
+  --heading:    light-dark(#000000, #eef2df);
+  --rule:       light-dark(#cfc2bf, #3d3d3d);
+  --accent:     light-dark(#ec5d4d, #e68369);
+  --link:       light-dark(#a8301f, #e68369);
+  --link-hover: light-dark(#6e1c10, #f3b09e);
+  --focus:      light-dark(#a8301f, #e68369);
+  --font-body: var(--stack-serif);
+  --font-heading: var(--stack-sans);
+}
+
+/* plain: neutral and bright (new.css feel). */
+[data-palette="plain"] {
+  color-scheme: light dark;
+  --bg:         light-dark(#ffffff, #16181b);
+  --surface:    light-dark(#f2f3f5, #1f2226);
+  --text:       light-dark(#2f3337, #d9dce0);
+  --muted:      light-dark(#5f6368, #9ba1a8);
+  --heading:    light-dark(#15171a, #f3f5f7);
+  --rule:       light-dark(#dcdfe3, #30353b);
+  --accent:     light-dark(#0a5fc2, #7fb6ff);
+  --link:       light-dark(#0a5fc2, #7fb6ff);
+  --link-hover: light-dark(#073f82, #b0d2ff);
+  --focus:      light-dark(#0a5fc2, #7fb6ff);
+}
+
+/* sand: the colours of the previous imml site. The original light accent
+   #E9762B is too light for body links on beige, so links use a darker shade. */
+[data-palette="sand"] {
+  color-scheme: light dark;
+  --bg:         light-dark(#efe1d1, #262626);
+  --surface:    light-dark(#e5d2bd, #2e2e2e);
+  --text:       light-dark(#331d2c, #e2e8ce);
+  --muted:      light-dark(#684d5c, #aeb39f);
+  --heading:    light-dark(#331d2c, #eef2df);
+  --rule:       light-dark(#d6bfa6, #3d3d3d);
+  --accent:     light-dark(#e9762b, #e68369);
+  --link:       light-dark(#9c4209, #e68369);
+  --link-hover: light-dark(#6b2c04, #f3b09e);
+  --focus:      light-dark(#9c4209, #e68369);
+}
+
+/* paper: warm off-white with serif type. Light only. */
+[data-palette="paper"] {
+  color-scheme: light;
+  --bg: #f8f4ec;
+  --surface: #eee6d7;
+  --text: #2e2923;
+  --muted: #675d51;
+  --heading: #1e1a15;
+  --rule: #dbd0bd;
+  --accent: #963b10;
+  --link: #963b10;
+  --link-hover: #5f2507;
+  --focus: #963b10;
+  --font-body: var(--stack-serif);
+  --weight-heading: 600;
+}
+
+/* dark: always dark, regardless of system setting. */
+[data-palette="dark"] {
+  color-scheme: dark;
+  --bg: #121417;
+  --surface: #1b1e22;
+  --text: #dadde1;
+  --muted: #9aa0a8;
+  --heading: #ffffff;
+  --rule: #2b2f35;
+  --accent: #8bc0ff;
+  --link: #8bc0ff;
+  --link-hover: #bcdaff;
+  --focus: #8bc0ff;
+}
+
+/* --- Font overrides (come after palettes so they win) ------------------- */
+[data-font-body="sans"]     { --font-body: var(--stack-sans); }
+[data-font-body="serif"]    { --font-body: var(--stack-serif); }
+[data-font-body="mono"]     { --font-body: var(--stack-mono); }
+[data-font-heading="sans"]  { --font-heading: var(--stack-sans); }
+[data-font-heading="serif"] { --font-heading: var(--stack-serif); }
+[data-font-heading="mono"]  { --font-heading: var(--stack-mono); }
+
+/* --- Theme button override (only affects light-dark() palettes) -------- */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
