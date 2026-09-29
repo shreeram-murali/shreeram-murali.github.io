@@ -6,7 +6,7 @@ Summary: PhD student at Aalto University working on safe, computationally lightw
 
 ![Portrait of Shreeram Murali]({static}/images/portrait.jpg){: .portrait .float-left }
 
-I am a PhD student in the [Cyber-physical Systems Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/cyber-physical-systems) at Aalto University, Finland, supervised by Prof. [Dominik Baumann](https://baumanndominik.github.io) and Prof. [Shankar Deka](https://research.aalto.fi/en/persons/shankar-deka). I'm also affiliated with the [Finnish Center for Artificial Intelligence](https://fcai.fi).
+I'm a PhD student in the [Cyber-physical Systems Group](https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/cyber-physical-systems) at Aalto University, Finland, supervised by Prof. [Dominik Baumann](https://baumanndominik.github.io) and Prof. [Shankar Deka](https://research.aalto.fi/en/persons/shankar-deka). I'm also affiliated with the [Finnish Center for Artificial Intelligence](https://fcai.fi).
 
 My research sits at the intersection of machine learning, computational statistics, and autonomous control. I'm interested in making learning-based methods safer, computationally lightweight, and more robust for applications in robotics and healthcare.
 
