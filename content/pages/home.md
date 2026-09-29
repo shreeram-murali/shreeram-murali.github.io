@@ -25,7 +25,7 @@ Outside of this, I'm into photography, filmmaking, film-watching, and noodling o
 <div class="pub" markdown="1">
 Computationally efficient safe exploration in reinforcement learning
 
-**S. Murali**, S. A. Deka, and D. Baumann
+Shreeram Murali, Shankar Deka, and Dominik Baumann
 
 *arXiv preprint* accepted to the IEEE Conference on Decision and Control (CDC), 2026
 
@@ -35,7 +35,7 @@ Computationally efficient safe exploration in reinforcement learning
 <div class="pub" markdown="1">
 Computationally lightweight classifiers with frequentist bounds on prediction errors
 
-**S. Murali**, C. R. Rojas, and D. Baumann
+Shreeram Murali, Cristian R. Rojas, and Dominik Baumann
 
 *International Conference on Artificial Intelligence and Statistics (AISTATS)*, 2026
 

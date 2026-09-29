@@ -64,7 +64,7 @@ Each entry is a block with four lines separated by blank lines: title, authors, 
 <div class="pub" markdown="1">
 Paper title
 
-**S. Murali**, A. Coauthor, and B. Coauthor
+Shreeram Murali, Anna Coauthor, and Ben Coauthor
 
 *Venue*, 2026
 
