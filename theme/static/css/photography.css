@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Visual pages (templates/photography.html). Loaded only on those pages,
+   so anything here is safe to change without affecting academic pages.
+   ========================================================================== */
+
+.visual-main { padding-block: var(--space-5) var(--space-6); }
+
+.visual-intro { margin-bottom: var(--space-5); }
+.visual-intro > :last-child { margin-bottom: 0; }
+
+/* The gallery is wider than the text column. */
+.gallery {
+  width: 100%;
+  max-width: calc(var(--wide) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-3);
+}
+.gallery:empty { display: none; }
+.gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }

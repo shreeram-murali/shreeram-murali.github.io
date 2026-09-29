@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{% if page.save_as == "index.html" %}{{ SITENAME }}{% else %}{{ page.title }} · {{ SITENAME }}{% endif %}{% endblock %}
+{% block description %}{{ page.summary if page.metadata.summary else SITEDESCRIPTION }}{% endblock %}
+{% block body_class %}page page--{{ page.slug }}{% endblock %}
+
+{% block content %}
+<article>
+  <h1{% if page.hide_title %} class="visually-hidden"{% endif %}>{{ page.title }}</h1>
+  {{ page.content }}
+</article>
+{% endblock %}

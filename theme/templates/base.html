@@ -1,0 +1,121 @@
+{#- Fonts: "auto"/"sans"/"serif"/"mono" map to system stacks in tokens.css.
+    Anything else is a Google Fonts family, e.g. "Source Serif 4, serif". -#}
+{%- set system_fonts = ["auto", "sans", "serif", "mono"] -%}
+{%- set google_families = [] -%}
+{%- set font_attrs = [] -%}
+{%- set font_vars = [] -%}
+{%- for role, value in [("heading", THEME_FONT_HEADING | default("auto")), ("body", THEME_FONT_BODY | default("auto"))] -%}
+  {%- if value in system_fonts -%}
+    {%- set _ = font_attrs.append('data-font-%s="%s"' | format(role, value)) -%}
+  {%- else -%}
+    {%- set parts = value.split(",") -%}
+    {%- set family = parts[0] | trim -%}
+    {%- set fallback = (parts[1] | trim) if parts | length > 1 else "sans" -%}
+    {%- set _ = google_families.append(family) -%}
+    {%- set _ = font_vars.append("--font-%s: '%s', var(--stack-%s);" | format(role, family, fallback)) -%}
+  {%- endif -%}
+{%- endfor -%}
+{#- Palettes that have both light and dark colours (see tokens.css). -#}
+{%- set dual_palettes = ["rose", "plain", "sand"] -%}
+{%- set theme_toggle = (THEME_PALETTE | default("plain")) in dual_palettes -%}
+{#- URL of the page being rendered, e.g. "", "publications/", "blog/my-post/". -#}
+{%- set current_url = (output_file | default("")) | replace("index.html", "") -%}
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}" data-palette="{{ THEME_PALETTE | default('plain') }}" {{ font_attrs | join(" ") }}{% if font_vars %} style="{{ font_vars | join(' ') }}"{% endif %}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{% filter striptags | forceescape %}{% block description %}{{ SITEDESCRIPTION }}{% endblock %}{% endfilter %}">
+  <meta name="author" content="{{ AUTHOR }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ SITENAME }}">
+  <meta property="og:title" content="{{ self.title() | striptags | forceescape }}">
+  <meta property="og:description" content="{{ self.description() | striptags | forceescape }}">
+  <meta property="og:url" content="{{ SITEURL }}/{{ current_url }}">
+  {% if OG_IMAGE %}
+  <meta property="og:image" content="{{ SITEURL }}/{{ OG_IMAGE }}">
+  {% endif %}
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="{{ SITEURL }}/favicon.svg" type="image/svg+xml">
+  {% if google_families %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?{% for f in google_families | unique %}family={{ f | replace(' ', '+') }}:{{ THEME_GOOGLE_FONT_AXES }}&amp;{% endfor %}display=swap">
+  {% endif %}
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tokens.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/base.css">
+  {% if theme_toggle %}
+  <script>
+    /* Apply a saved light/dark choice before the page paints. */
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  {% endif %}
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="site-name" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+      <div class="site-header__end">
+        <nav aria-label="Main">
+          <ul class="nav">
+            {% for label, path in NAV_LINKS %}
+            <li><a href="{{ SITEURL }}/{{ path }}"{% if path == current_url %} aria-current="page"{% elif path and current_url.startswith(path) %} aria-current="true"{% endif %}>{{ label }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+        {% if theme_toggle %}
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" title="Toggle dark mode" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/>
+          </svg>
+          <span class="visually-hidden">Dark mode</span>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="{% block main_class %}wrap{% endblock %}">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Built with <a href="https://getpelican.com">Pelican</a>.</p>
+      <p>&copy; {{ AUTHOR }}</p>
+    </div>
+  </footer>
+  {% if theme_toggle %}
+  <script>
+    /* Light/dark button. With no saved choice the site follows the system
+       setting; picking the mode that matches the system clears the choice. */
+    (function () {
+      var root = document.documentElement;
+      var button = document.getElementById("theme-toggle");
+      var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+      function current() { return root.dataset.theme || (systemDark.matches ? "dark" : "light"); }
+      function sync() { button.setAttribute("aria-pressed", current() === "dark"); }
+      button.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        var system = systemDark.matches ? "dark" : "light";
+        try {
+          if (next === system) { delete root.dataset.theme; localStorage.removeItem("theme"); }
+          else { root.dataset.theme = next; localStorage.setItem("theme", next); }
+        } catch (e) { root.dataset.theme = next; }
+        sync();
+      });
+      systemDark.addEventListener("change", sync);
+      button.hidden = false;
+      sync();
+    })();
+  </script>
+  {% endif %}
+</body>
+</html>

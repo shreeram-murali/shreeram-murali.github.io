@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} · {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.summary }}{% endblock %}
+{% block body_class %}post{% endblock %}
+
+{% block content %}
+<article>
+  <header class="post-header">
+    <h1>{{ article.title }}</h1>
+    <p class="meta"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></p>
+  </header>
+  {{ article.content }}
+  <footer class="post-footer">
+    <a href="{{ SITEURL }}/blog/">← All posts</a>
+  </footer>
+</article>
+{% endblock %}

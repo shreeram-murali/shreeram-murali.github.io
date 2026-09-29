@@ -1,2 +1,6 @@
 theme.txt
 .DS_Store
+output/
+.venv/
+__pycache__/
+*.pyc

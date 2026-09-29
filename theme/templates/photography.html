@@ -1,0 +1,23 @@
+{#- Visual pages (Photography, later Film). Wider main area and its own
+    stylesheet, so gallery styling never touches the academic pages. -#}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} · {{ SITENAME }}{% endblock %}
+{% block description %}{{ page.summary if page.metadata.summary else SITEDESCRIPTION }}{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/photography.css">
+{% endblock %}
+{% block body_class %}visual page--{{ page.slug }}{% endblock %}
+{% block main_class %}visual-main{% endblock %}
+
+{% block content %}
+<article>
+  <header class="visual-intro wrap">
+    <h1>{{ page.title }}</h1>
+    {{ page.content }}
+  </header>
+  <div class="gallery" id="gallery">
+    {#- Gallery images go here. -#}
+  </div>
+</article>
+{% endblock %}

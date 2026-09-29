@@ -1,0 +1,44 @@
+# Source lives on `dev`. Every push to `dev` builds the site and commits the
+# contents of output/ to `main`, which GitHub Pages serves
+# (Settings -> Pages -> Deploy from a branch -> main, / (root)).
+
+name: Build and publish
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: pelican content -s publishconf.py --fatal errors
+
+      - name: Commit output/ to main
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: ./output
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          full_commit_message: "Publish site from dev@${{ github.sha }}"
